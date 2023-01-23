@@ -4,10 +4,14 @@
 club-QuickBox is a fresh and modernized skin for rTorrent GUI, ruTorrent. This theme has been featured on projects such as Swizards and has been made exclusively for QuickBox.IO. Welcome to club-QuickBox!
 
 
-# Screenshot
+# Screenshot club-QuickBox
 
 ![ruTorrent][1]
 
+# Screenshot club-QuickBox-Mod
+![ruTorrent mod][2]
+
+https://github.com/Deci8BelioS/club-QuickBox-ruTorrent-4.0/blob/master/screenshot/ruTorrent%20mod.png
 
 ## Install
 
@@ -19,3 +23,4 @@ git clone https://github.com/QuickBox/club-QuickBox.git club-QuickBox
 chown -R www-data: club-QuickBox
 ```
 [1]: screenshot/ruTorrent.jpg "ruTorrent"
+[2]: screenshot/ruTorrent%20mod.png "ruTorrent mod"
