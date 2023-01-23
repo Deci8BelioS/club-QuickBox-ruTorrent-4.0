@@ -11,8 +11,6 @@ club-QuickBox is a fresh and modernized skin for rTorrent GUI, ruTorrent. This t
 # Screenshot club-QuickBox-Mod
 ![ruTorrent mod][2]
 
-https://github.com/Deci8BelioS/club-QuickBox-ruTorrent-4.0/blob/master/screenshot/ruTorrent%20mod.png
-
 ## Install
 
 You will need to navigate to your plugins/themes directory, typically located at ```../../rutorrent/plugins/theme/themes```
