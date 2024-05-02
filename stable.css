@@ -12,9 +12,9 @@
     background: #2a2a2a none repeat scroll 0 0;
 	  /*background: #2a2a2a url("./images/headers.png") repeat-x scroll 0 -91px;*/
     border: medium none;
-    color: #999;
+    color: #CECECE;
     font-family: inherit;
-    text-shadow: none;
+    text-shadow: 1px 2px 1px #000000;
 }
 div#tdcont .stable-head {
     border: none;
@@ -44,8 +44,8 @@ div#tdcont .stable {
 }
 .stable-body {
     background: window;
-    text-shadow: none;
-    color: #ccc;
+	color: #CECECE;
+	text-shadow: 1px 2px 1px #000000;
 }
 .stable-body td {
     border-bottom: 1px solid #2a2a2a;
@@ -69,12 +69,12 @@ div#tdcont .stable {
     height: 22px;
 }
 .stable-body {
-    background: #222 none repeat scroll 0 0
+    background: #222 none repeat scroll 0 0;
 }
 .stable-body tr.selected td {
 	background: #343434 none repeat scroll 0 0;
-	color: #009ddd;
-	text-shadow: 0 0 4px #000;
+	color: #00a5ff;
+	text-shadow: 1px 2px 1px #000000;
 }
 div.stable-body table tbody tr.even td {
     background: #2a2a2a none repeat scroll 0 0;
@@ -83,7 +83,8 @@ div.stable-body table tbody tr.even:hover td {
     background: #333 none repeat scroll 0 0;
 }
 div.stable-body table tbody tr.even td:nth-child(2n+1) {
-    color: #aaa;
+  color: #CECECE;
+  text-shadow: 1px 2px 1px #000000;
 }
 div.stable-body table tbody tr.even:nth-child(2n+1) td {
   background: #2a2a2a none repeat scroll 0 0;
@@ -111,7 +112,7 @@ div.stable-body table tbody tr.even:hover:nth-child(2n+1) td {
     background: rgba(128, 128, 128, 0.7);
 }
 .stable-active-header {
-    border-color: threedface !important
+    border-color: threedface !important;
 }
 .stable-separator-header {
     background: #181818;
@@ -133,22 +134,20 @@ div.stable-body table tbody tr.even:hover:nth-child(2n+1) td {
     border-radius: 12px;
 }
 .stable-body tr.selected span.meter-value {
-    color: #fff;
+    color: #CECECE;
 }
 .meter-text {
-	color: #fff;
-	float: left;
-	font-family: Open Sans;
-	font-size: 11px;
-	font-weight: 400;
-	height: 0;
-	left: 40%;
-	line-height: 23px;
-	overflow: visible;
 	position: relative;
-	text-align: left;
-	text-shadow: 0 0 4px #6c7a89;
-	width: 0;
+	color: #CECECE;
+	text-shadow: 1px 2px 1px #000000;
+	float: center;
+	font-size: 12px;
+	font-weight: 450;
+	height: 0;
+	left: 0%;
+	line-height: 21px;
+	overflow: visible;
+	text-align: center;
 	z-index: 1;
 }
 .stable-icon {
@@ -162,9 +161,10 @@ div.stable-body table tbody tr.even:hover:nth-child(2n+1) td {
 .stable-List-col-3 div {
 	height: 18px !important;
 	text-align: left;
+	
 }
 .stable-List-col-6 div {
 	font-weight: 400;
 	text-align: center;
-	text-shadow: 0 0 4px #000;
+	text-shadow: 1px 2px 1px #000000;
 }
