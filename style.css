@@ -7,6 +7,18 @@ body {
   font-family: Open Sans;
   text-shadow: none;
 }
+:root {
+  --menu-color: #ccc;
+  --menu-border-color: #333;
+  --menu-background-color: #222;
+
+  --menu-disabled-color: #333333;
+
+  --menu-highlight-color: #757571;
+  --menu-highlight-background-color: #cfdeef;
+
+  --settings-background-color: #2a2a2a;
+}
 
 div#preload {
   width: 0px;
@@ -16,7 +28,7 @@ div#preload {
   background-image: url(./images/toolbar.png);
   background-image: url(./images/status_icons.png);
   background-image: url(./images/r_bg.gif);
-  background-image: url(./images/asc.gif);
+  background-image: url("./images/asc.gif");
   background-image: url(./images/desc.gif);
   background-image: url(./images/pnl_open.png) !important;
   background-image: url(./images/pnl_close.png) !important;
@@ -26,7 +38,7 @@ div#preload {
 
 a.dlg-close:link,
 a.dlg-close:visited {
-  background: transparent url(./images/close.png) no-repeat scroll left center;
+  background: transparent url("./images/close.png") no-repeat scroll left center;
   border: 0 none;
   float: right;
   height: 14px;
@@ -35,7 +47,7 @@ a.dlg-close:visited {
 }
 
 a.dlg-close:hover {
-  background: transparent url(./images/close.png) no-repeat scroll -14px center;
+  background: transparent url("./images/close.png") no-repeat scroll -14px center;
   border: 0 none;
   float: right;
   height: 14px;
@@ -128,7 +140,7 @@ ul.CMenu li.menuitem:last-child {
 }
 
 ul.CMenu li a {
-  background: transparent url(./images/menus.png) no-repeat scroll 0 0;
+  background: transparent url("./images/menus.png") no-repeat scroll 0 0;
   color: #999;
   padding: 3px 4px 3px 18px;
 }
@@ -315,11 +327,11 @@ div#t div#rss:hover {
 }
 
 #autodl-tb {
-  background: transparent url(./images/toolbar.png) no-repeat scroll -271px 0 !important;
+  background: transparent url("./images/toolbar.png") no-repeat scroll -271px 0 !important;
 }
 
 #autodl-tb:hover {
-  background: transparent url(./images/toolbar.png) no-repeat scroll -271px -30px !important;
+  background: transparent url("./images/toolbar.png") no-repeat scroll -271px -30px !important;
 }
 
 div#t div#setting {
@@ -422,6 +434,7 @@ textarea[disabled] {
 input[type="text"],
 input[type="password"],
 input[type="file"],
+input[type="number"],
 select {
   background: #212121 none repeat scroll 0 0;
   border: 1px solid #313131;
@@ -431,12 +444,16 @@ select {
 input[type="text"][disabled],
 input[type="password"][disabled],
 input[type="file"][disabled],
+input[type="number"][disabled],
 select[disabled] {
   background: #212121 none repeat scroll 0 0;
   border: 1px solid #313131;
   color: black;
 }
 
+button,
+input.Button0,
+input[type="button"],
 input.Button {
   background: #222 none repeat scroll 0 0;
   border: 1px solid #333;
@@ -452,135 +469,99 @@ input.Button {
   text-shadow: none;
 }
 
-input.Button:hover,
-input.Button:focus {
+button:not([disabled]):hover,
+button:not([disabled]):focus,
+button:not([disabled]):hover:active,
+input.Button:not([disabled]):hover,
+input.Button:not([disabled]):focus,
+input.Button:not([disabled]):hover:active,
+input[type="button"]:hover
+input[type="button"]:focus
+input[type="button"]:active {
   background: #3a3a3a none repeat scroll 0 0;
   text-shadow: 0 0 4px #999;
   color: #999;
 }
 
-div#CatList {
-  border: none;
-  background-color: #fff;
-  border-right: 1px solid #ccc;
-  border-left: 1px solid #ccc;
-}
-
-div#CatList ul {}
-
-div#CatList ul li span {
-  color: #67809F
-}
-
-div#CatList ul li.sel span {
-  color: #2782cf
-}
-
-div#CatList {
+#CatList, category-list {
   background-color: #222;
   border: 1px solid #222;
 }
 
-div#CatList .label-prefix {
-  font-size: 20px;
-}
-
-div#CatList ul li {
-  background-repeat: no-repeat;
-  cursor: pointer;
-  font-family: Open Sans;
+category-panel {
   font-size: 12px;
-  line-height: 16px;
-  margin: 0;
-  padding: 4px 9px;
+  font-family: Open Sans;
+  --open-background-image: url(../plugins/theme/themes/club-QuickBox/images/pnl_open.gif);
+  --close-background-image: url(../plugins/theme/themes/club-QuickBox/images/pnl_close.gif);
 }
-
-div#CatList ul li:hover {
-  background-color: #303030;
-}
-
-div#CatList ul li.sel {
-  background-color: #303030;
-  border: 1px solid #313131;
-  color: #00ff75;
-  font-style: normal;
-  text-shadow:0 -1px 0 #000;
-}
-
-.label-icon {
-  background-image: url(./images/status_icons.png);
-  background-position: 0px -534px;
-  min-width: 18px;
-  min-height: 18px;
-}
-
-div#CatList li.sel .label-prefix {
-	color:#FFF;
-}
-
-.label-count, .label-size {
-	color: #f5f5f5;
-	background-color: #222222;
-}
-
-li.sel .label-count, li.sel .label-size {
-	color:#f89406;
-	height: 16px;
-  line-height: 16px;
-  padding: 2px 6px;
-  font-style: normal;
-}
-
-.catpanel {
-  background: #222 url(./images/pnl_open.gif) no-repeat scroll 0 0;
-  border-bottom: medium none;
-  border-right: medium none;
+category-panel::part(heading) {
+  background-color: #273238;
   border-top: 1px solid #2a2a2a;
-  color:#DCDCDC;
-  font-family: inherit;
+  color: #ccc;
   font-size: 14px;
   font-weight: bold;
   height: 25px;
   line-height: 25px;
   padding: 2px 28px;
-  text-shadow:0 -1px 0 #000;
 }
 
-.-_-_-all-_-_- .label-icon, #-_-_-all-_-_- .label-icon {
-  background-position: 0px -305px;
+panel-label {
+  color:#FFF;
+  border:none;
+  padding: 4px 9px;
+  line-height: 16px;
+  border: 1px solid #1A2329;
+  background-color: #1A2329;
+  --prefix-color: #FFF;
+  --prefix-fontsize: 20px;
+  --badge-color: #A0A0A0;
+  --badge-background-color: #2a2a2a;
+  --icon-offset: 0px -534px;
+  --status-image: url(../plugins/theme/themes/club-QuickBox/images/status_icons.png);
+  --icon-size: 18px;
 }
 
-#-_-_-dls-_-_- .label-icon {
-  background-position: 0px 0px;
+panel-label:hover {
+  background-color: #303030;
 }
 
-#-_-_-com-_-_- .label-icon {
-  background-position: 0px -30px;
+panel-label[selected] {
+  border: 1px solid #313131;
+  background-color: #303030;
+  color: #009ddd;
 }
 
-#-_-_-act-_-_- .label-icon {
-  background-position: 0px -278px;
+panel-label[icon=all] {
+  --icon-offset: 0px -305px;
+}
+panel-label[icon=down] {
+  --icon-offset: 0px 0px;
 }
 
-#-_-_-iac-_-_- .label-icon {
-  background-position: 0px -57px;
+panel-label[icon=completed] {
+  --icon-offset: 0px -30px;
 }
 
-#-_-_-err-_-_- .label-icon {
-  background-position: 0px -169px;
+panel-label[icon=up-down] {
+  --icon-offset: 0px -278px;
 }
 
-#-_-_-nlb-_-_- .label-icon {
-  background-position: 0px -644px;
+panel-label[icon=incompleted] {
+  --icon-offset: 0px -57px;
 }
 
-.RSS .label-icon, .disRSS .label-icon, .RSSGroup .label-icon {
-  background-position: 0px -360px !important;
+panel-label[icon=error] {
+  --icon-offset: 0px -169px;
 }
 
-.catpanelcont {
-	margin:15px 2px;
-	transition:all .3s cubic-bezier(0.68,-0.55,0.27,1.55) 0
+panel-label[icon=no-label] {
+  --icon-offset: 0px -644px;
+}
+
+panel-label[icon=rss],
+panel-label[icon=rss-dis],
+panel-label[icon=rss-group] {
+  --icon-offset: 0px -360px;
 }
 
 .stable-icon {
@@ -593,10 +574,6 @@ li.sel .label-count, li.sel .label-size {
 
 .Icon_Dir {
   background: transparent url(./images/dir.gif) no-repeat left center
-}
-
-div#CatList .sel .label-size, div#CatList .sel .label-size {
-	color:#00f7ff
 }
 
 div#flabel_cont ul li:not(.-_-_-all-_-_-) .label-icon {
@@ -684,7 +661,7 @@ div#stg {
 }
 
 .lm li {
-  background: transparent url(./images/bul.gif) no-repeat scroll left center;
+  background: transparent url("./images/bul.gif") no-repeat scroll left center;
   line-height: 20px !important;
   margin: 0 5px;
   padding: 0 10px;
@@ -987,6 +964,10 @@ span#loadimg {
   background: transparent url(./images/ajax-loader.png) no-repeat center center;
 }
 
+#fltlist li {
+    margin: 3px;
+}
+
 /*Scrollbars*/
 
 ::-webkit-scrollbar-button:start:decrement {
@@ -1025,6 +1006,8 @@ input#add_url,
 input#add_button {
   margin-top: 2px;
 }
+
+div#lcont {}
 
 div#lcont div.std {
   background: #2a2a2a none repeat scroll 0 0;
